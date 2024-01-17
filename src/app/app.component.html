@@ -8,36 +8,18 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
 <html>
+    <body>
 <h1>Welcome to ABC Telcom Ltd. Complaint Redressal System!</h1>
-<h4>Click below on the appropriate links to avail services like raising tickets,
-   traking the tickets, communicating status, resolving the tickets etc.</h4>
+<!-- <h4>Login below to avail services like raising tickets,
+   traking the tickets, communicating status, resolving the tickets etc.</h4> -->
    <!-- <p>Click <a routerLink="/login/admin">Here</a> to login, if you are an Admin</p>
    <p>Click <a routerLink="/login/manager">Here</a> to login, if you are a Manager</p>
    <p>Click <a routerLink="/login/engineer">Here</a> to login, if you are an Engineer</p>
    <p>Click <a routerLink="/login/customer">Here</a> to login, if you are a Customer</p> -->
 
-    <form [formGroup]="loginForm" (ngSubmit)="login">
-      <div>
-        <label>UserName:</label>
-        <input type="text" name="username" class="form-control" formControlName="username">
-      </div>
-      <div>
-        <label>Password:</label>
-        <input type="password" name="pwd" class="form-control" formControlName="pwd">
-      </div>
-      <div>
-        <input type="radio" name="Admin" value="admin" formControlName="role">
-        <label>Admin</label>
-        <input type="radio" name="Manager" value="manager" formControlName="role">
-        <label>Manager</label>
-        <input type="radio" name="Engineer" value="engineer" formControlName="role">
-        <label>Engineer</label>
-        <input type="radio" name="Customer" value="customer" formControlName="role">
-        <label>Customer</label>
-      </div>
-    </form>
+    <router-outlet></router-outlet>
 
-
+    </body>
 </html>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
@@ -47,4 +29,3 @@
 <!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<router-outlet></router-outlet>
