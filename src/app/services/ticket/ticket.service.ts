@@ -20,4 +20,34 @@ export class TicketService {
     return this.httpClient.put<Ticket>(ticketapi.assignTicketToEngineer+`?ticketId=${ticketId}`,engineer);
   }
 
+  getAllTickets(userId:string){
+    return this.httpClient.get<Ticket[]>(ticketapi.getAllTickets+`?userId=${userId}`);
+  }
+
+  getTicketWithId(id:string){
+    return this.httpClient.get<Ticket>(ticketapi.getTicketWithId+`?ticketId=${id}`);
+  }
+
+  getAllTicketsOfCustomer(customerId:string){
+    return this.httpClient.get<Ticket[]>(ticketapi.getAllTicketsOfCustomer+`?userId=${customerId}`);
+  }
+
+  getAllTicketsOfManager(managerId:string){
+    return this.httpClient.get<Ticket[]>(ticketapi.getAllTicketsOfManager+`?userId=${managerId}`);
+  }
+
+  getAllTicketsOfEngineer(engineerId:string){
+    return this.httpClient.get<Ticket[]>(ticketapi.getAllTicketsOfEngineer+`?userId=${engineerId}`);
+  }
+
+  getAllTicketsWithStatus(status:string){
+    return this.httpClient.get<Ticket[]>(ticketapi.getAllTicketsWithStatus+`?status=${status}`);
+  }
+
+  updateTicketManager(managerId:string,ticket:Ticket){
+    return this.httpClient.patch<Ticket>(ticketapi.updateTicketManager+`?userId=${managerId}`,ticket);
+  }
+  
+
+
 }
